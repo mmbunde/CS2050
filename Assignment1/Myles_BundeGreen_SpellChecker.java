@@ -15,6 +15,5 @@ public class Myles_BundeGreen_SpellChecker{
             }
         }
         
-        
     }
 }
