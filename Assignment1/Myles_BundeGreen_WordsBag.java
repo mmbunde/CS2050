@@ -145,4 +145,5 @@ public final class Myles_BundeGreen_WordsBag<T> implements BagInterface<T>{
 
         return result;
     }
+    
 }
