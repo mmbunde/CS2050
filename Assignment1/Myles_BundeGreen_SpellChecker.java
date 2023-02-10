@@ -31,7 +31,7 @@ public class Myles_BundeGreen_SpellChecker{
                 System.out.println("You have spelled " + word + " correctly");
             }
             else{
-                System.out.println("You have spelled " + word + " wrong.");
+                System.out.println("You have spelled " + word + " wrong or " + word + " isn't in the list of checked words.");
             }
         
     }
