@@ -23,7 +23,8 @@ public class Myles_BundeGreen_SpellChecker{
          catch(FileNotFoundException e){
             System.out.println("File not found");
          }
-
+        boolean check = true;
+        while(check){
          System.out.println("Please enter a word to check:");
          String word = keyboard.nextLine();
 
@@ -33,6 +34,18 @@ public class Myles_BundeGreen_SpellChecker{
             else{
                 System.out.println("You have spelled " + word + " wrong or " + word + " isn't in the list of checked words.");
             }
-        
+            System.out.println("Would you like to check another word? (1 for yes, 0 for no)");
+            int another = keyboard.nextInt();
+            keyboard.nextLine();
+            if(another == 0){
+                check = false;
+            }
+            /*else if(another == 1){
+                check = true;
+            }
+            else{
+                System.out.println("Please enter 1 or 0.");
+            }*/
+        }
     }
 }
