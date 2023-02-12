@@ -40,12 +40,6 @@ public class Myles_BundeGreen_SpellChecker{
             if(another == 0){
                 check = false;
             }
-            /*else if(another == 1){
-                check = true;
-            }
-            else{
-                System.out.println("Please enter 1 or 0.");
-            }*/
         }
     }
 }
