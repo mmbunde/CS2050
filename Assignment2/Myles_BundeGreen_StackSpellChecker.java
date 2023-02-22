@@ -35,15 +35,9 @@ public class Myles_BundeGreen_StackSpellChecker{
                     }
                     else{
                         System.out.println("You have spelled " + word + " incorrectly or it isn't in the list");
-                        /*System.out.println("Continue?");
-                        int another = keyboard.nextInt();
-                        keyboard.nextLine();
-                        if(another == 0){
-                            check = false;
-                        }*/
                     }
                 
-                System.out.println("Continue?");
+                System.out.println("Continue? (1 for Yes, 0 for No)");
                 int another = keyboard.nextInt();
                 keyboard.nextLine();
                 if(another == 0){
