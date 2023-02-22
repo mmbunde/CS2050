@@ -15,28 +15,28 @@ public final class Myles_BundeGreen_Words_Stack<T> implements StackInterface<T>{
         private Node(T dataPortion)
       {
          this(dataPortion, null);
-      } // end constructor
+      }
       
       private Node(T dataPortion, Node linkPortion)
       {
          data = dataPortion;
          next = linkPortion;
-      } // end constructor
+      }
       
       private T getData()
       {
          return data;
-      } // end getData
+      }
       
       private Node getNextNode()
       {
          return next;
-      } // end getNextNode
+      }
       
-      private void setNextNode(Node nextNode)
+      /*private void setNextNode(Node nextNode)
       {
          next = nextNode;
-      }
+      }*/
 
     }
 

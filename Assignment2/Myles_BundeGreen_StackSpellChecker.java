@@ -31,7 +31,7 @@ public class Myles_BundeGreen_StackSpellChecker{
                     temp.push(myStackDictionary.pop());
                 }
                     if(word.equals(myStackDictionary.peek())){
-                        System.out.println("You have spelled " + word + " correctly, good job.");
+                        System.out.println("You have spelled " + myStackDictionary.peek() + " correctly, good job.");
                     }
                     else{
                         System.out.println("You have spelled " + word + " incorrectly or it isn't in the list");
