@@ -2,49 +2,43 @@ public class Myles_BundeGreen_Project1{
     static BagInterface<String> testLink = new LinkedBag<>();
     
     public static void main(String[] args){
-        System.out.println("Testing add: " + add_test());
-        System.out.println("Test empty: " + empty_test());
-        System.out.println("Test size: " + size_test(12));
-        //System.out.println("Test array: " + array_test(4));
+        System.out.println("Testing add: " + addTest());
+        System.out.println("Test empty: " + emptyTest());
+        System.out.println("Test size: " + sizeTest(12));
+        System.out.println("Test array: " + arrayTest());
+        System.out.println("Testing freq: " + freqTest(6));
+        System.out.println("Testing contains: " + containsTest(4));
+        System.out.println("Test clear: " + clearTest(5));
+        System.out.println("Testing remove: " + removeTest(8));
+        System.out.println("Testing remove entry: " + entryRemoveTest());
     }
 
-    public static boolean add_test(){
+    public static boolean addTest(){
         //BagInterface<String> testLink = new LinkedBag<>();
         boolean test_add = false;
         if(testLink.isEmpty()){
             testLink.add("String test");
             test_add = true;
         }
-        else{
-            test_add = false;
-        }
         testLink.add("String 2");
         if(testLink.contains("String test") && testLink.getFrequencyOf("String 2") >= 1){
             test_add = true;
         }
-        
         else if(testLink.contains("String test") || testLink.getFrequencyOf("String 2") >= 1){
             test_add = true;
             System.out.println("Conatains is: " + testLink.contains("String test") + " or getFreq is " + testLink.getFrequencyOf("String 2"));
-        }
-
-        else{
-            test_add = false;
         }
         testLink.clear();
         return test_add;
     }
 
-    public static boolean empty_test(){
+    public static boolean emptyTest(){
         //BagInterface<String> testLink = new LinkedBag<>();
         boolean test_empty = false;
         boolean test_notempty = false;
         //testing if link bag is empty
         if(testLink.isEmpty()){
             test_empty = true;
-        }
-        else{
-            test_empty = false;
         }
         //testing is link bag is not empty
         testLink.add("test empty");
@@ -69,40 +63,97 @@ public class Myles_BundeGreen_Project1{
         }
         
     }
-    public static boolean size_test(int size){
+    public static boolean sizeTest(int size){
         int i;
         boolean test_size = false;
-        for(i = 1; i <= size; i++){
+        for(i = 0; i < size; i++){
             testLink.add("test size " + i);
-            System.out.println(testLink);
         }
         if(testLink.getCurrentSize() == size){
             test_size = true;
         }
-        else{
-            test_size = false;
-        }
         testLink.clear();
         return test_size;
     }
-    /*public static boolean array_test(int array_length){
-        int i;
-        boolean test_array;
-        for(i = 0; i <= array_length; i++){
-            testLink.add("test array size " + i);
-        }
+    public static boolean arrayTest(){
+        boolean test_array = false;
+        int i, j;
+        String[] trueArray = {"item 1", "item 2", "item 3"};
+        testLink.add("item 1");
+        testLink.add("item 2");
+        testLink.add("item 3");
         Object[] testArray = testLink.toArray();
-        /*for(i = 0; i < array_length; i++){
-            System.out.println(testArray[i]);
+        if(trueArray.length == testArray.length){
+            for(i = 0; i < trueArray.length; i++){
+                for(j = 0; j < trueArray.length; j++){
+                    if(trueArray[i] == testArray[j]){
+                        test_array = true;
+                    }
+                }
+            }
         }
-        if(testArray.equals(testLink)){
-            test_array = true;
-        }
-        else{
-            test_array = false;
-        }
-
-        
+        testLink.clear();
         return test_array;
-    }*/
+    }
+    public static boolean freqTest(int freq){
+        boolean test_freq = false;
+        int i;
+        for(i = 1; i <= freq; i++){
+            testLink.add("item " + freq);
+        }
+        if(testLink.getFrequencyOf("item " + freq) == freq){
+            test_freq = true;
+        }
+        testLink.clear();
+        return test_freq;
+    }
+    public static boolean containsTest(int size){
+        boolean test_contains = false;
+        int i;
+        for(i = 1; i <= size; i++){
+            testLink.add("item " + i);
+        }
+        for(i = 1; i <= size; i++){
+            if(testLink.contains("item " + i)){
+                test_contains = true;
+            }
+        }
+        return test_contains;
+    }
+    public static boolean clearTest(int size){
+        boolean test_clear = false;
+        int i;
+        for(i = 0; i < size; i++){
+            testLink.add("item " + i);
+        }
+        testLink.clear();
+        if(testLink.getCurrentSize() == 0){
+            test_clear = true;
+        }
+        return test_clear;
+    }
+    public static boolean removeTest(int size){
+        boolean test_remove = false;
+        int i;
+        for(i = 1; i <= size; i++){
+            testLink.add("item " + i);
+        }
+        testLink.remove();
+        if(testLink.getCurrentSize() == size -1){
+            test_remove = true;
+        }
+        return test_remove;
+    }
+    
+    public static boolean entryRemoveTest(){
+        boolean test_entry = false;
+        testLink.add("Will this be removed?");
+        testLink.add("Only time will tell!");
+        testLink.remove("Only time will tell!");
+        if(!testLink.contains("Only time will tell!")){
+            test_entry = true;
+        }
+        return test_entry;
+    }
+
 }

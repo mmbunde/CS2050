@@ -23,7 +23,7 @@ public class Myles_BundeGreen_StackSpellChecker{
             boolean check = true;
             StackInterface<String> temp = new Myles_BundeGreen_Words_Stack<>();
             while(check){
-                System.out.println("Please enter word: ");
+                System.out.println("Please enter word to check the spelling: ");
                 String word = keyboard.nextLine();
                 try{
                     while(!word.equals(myStackDictionary.peek())){
@@ -52,5 +52,6 @@ public class Myles_BundeGreen_StackSpellChecker{
             }
             System.out.println(myStackDictionary.peek());
             }
+            System.out.println("Thank You!");
     }
 }
