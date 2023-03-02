@@ -14,7 +14,6 @@ public class Myles_BundeGreen_Project1{
     }
 
     public static boolean addTest(){
-        //BagInterface<String> testLink = new LinkedBag<>();
         boolean test_add = false;
         if(testLink.isEmpty()){
             testLink.add("String test");
@@ -33,7 +32,6 @@ public class Myles_BundeGreen_Project1{
     }
 
     public static boolean emptyTest(){
-        //BagInterface<String> testLink = new LinkedBag<>();
         boolean test_empty = false;
         boolean test_notempty = false;
         //testing if link bag is empty
@@ -61,8 +59,8 @@ public class Myles_BundeGreen_Project1{
             testLink.clear();
             return false;
         }
-        
     }
+
     public static boolean sizeTest(int size){
         int i;
         boolean test_size = false;
@@ -75,6 +73,7 @@ public class Myles_BundeGreen_Project1{
         testLink.clear();
         return test_size;
     }
+
     public static boolean arrayTest(){
         boolean test_array = false;
         int i, j;
@@ -95,6 +94,7 @@ public class Myles_BundeGreen_Project1{
         testLink.clear();
         return test_array;
     }
+
     public static boolean freqTest(int freq){
         boolean test_freq = false;
         int i;
@@ -107,6 +107,7 @@ public class Myles_BundeGreen_Project1{
         testLink.clear();
         return test_freq;
     }
+
     public static boolean containsTest(int size){
         boolean test_contains = false;
         int i;
@@ -120,6 +121,7 @@ public class Myles_BundeGreen_Project1{
         }
         return test_contains;
     }
+
     public static boolean clearTest(int size){
         boolean test_clear = false;
         int i;
@@ -132,6 +134,7 @@ public class Myles_BundeGreen_Project1{
         }
         return test_clear;
     }
+
     public static boolean removeTest(int size){
         boolean test_remove = false;
         int i;
@@ -155,5 +158,4 @@ public class Myles_BundeGreen_Project1{
         }
         return test_entry;
     }
-
 }
