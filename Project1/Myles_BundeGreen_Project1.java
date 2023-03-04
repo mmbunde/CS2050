@@ -7,7 +7,7 @@ public class Myles_BundeGreen_Project1{
         System.out.println("Test size: " + sizeTest(12));
         System.out.println("Test array: " + arrayTest());
         System.out.println("Testing freq: " + freqTest(6));
-        System.out.println("Testing contains: " + containsTest(4));
+        System.out.println("Testing contains: " + containsTest("TEST"));
         System.out.println("Test clear: " + clearTest(5));
         System.out.println("Testing remove: " + removeTest(8));
         System.out.println("Testing remove entry: " + entryRemoveTest());
@@ -108,16 +108,13 @@ public class Myles_BundeGreen_Project1{
         return test_freq;
     }
 
-    public static boolean containsTest(int size){
+    public static boolean containsTest(String element){
         boolean test_contains = false;
-        int i;
-        for(i = 1; i <= size; i++){
-            testLink.add("item " + i);
-        }
-        for(i = 1; i <= size; i++){
-            if(testLink.contains("item " + i)){
-                test_contains = true;
-            }
+        int containsSizeBefore = testLink.getFrequencyOf(element);
+        testLink.add(element);
+        int containsSizeAfter = testLink.getFrequencyOf(element);
+        if(testLink.contains(element) && containsSizeAfter == containsSizeBefore + 1){
+            test_contains = true;
         }
         return test_contains;
     }
@@ -150,10 +147,17 @@ public class Myles_BundeGreen_Project1{
     
     public static boolean entryRemoveTest(){
         boolean test_entry = false;
-        testLink.add("Will this be removed?");
-        testLink.add("Only time will tell!");
-        testLink.remove("Only time will tell!");
-        if(!testLink.contains("Only time will tell!")){
+        int before, after;
+        String testElement1 = "Will this be removed?";
+        String testElement2 = "Only time will tell!";
+        String testElement3 = "Well that escalated quickly";
+        testLink.add(testElement1);
+        testLink.add(testElement2);
+        testLink.add(testElement3);
+        before = testLink.getFrequencyOf(testElement2);
+        testLink.remove(testElement2);
+        after = testLink.getFrequencyOf(testElement2);
+        if(!testLink.contains(testElement2) && before > after){
             test_entry = true;
         }
         return test_entry;
