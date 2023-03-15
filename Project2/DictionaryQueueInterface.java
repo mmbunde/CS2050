@@ -20,5 +20,4 @@ public boolean isEmpty();
 
 /** Removes all entries from this queue. */
 public void clear();
-
 }
