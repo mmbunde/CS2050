@@ -19,6 +19,7 @@ public class Myles_BundeGreen_CLQSpellChecker {
                 wordCount++;
             }
         }
+        fileData.close();
     }
     catch(FileNotFoundException e){
         System.out.println("File not found");
@@ -33,8 +34,11 @@ public class Myles_BundeGreen_CLQSpellChecker {
         System.out.println("Please enter a word to check the spelling: ");
         String word = keyboard.nextLine();
         try{
+            if(word.equals(testQueue.getFront())){
+                System.out.println("You have spelled " + testQueue.getFront() + " correctly, good job.");
             while(!word.equals(testQueue.getFront())){
                 temp.enqueue(testQueue.dequeue());
+            }
             }
             if(word.equals(testQueue.getFront())){
                 System.out.println("You have spelled " + testQueue.getFront() + " correctly, good job.");
@@ -76,29 +80,4 @@ public class Myles_BundeGreen_CLQSpellChecker {
         }
         return testClear;
     }
-
-    /*Assignment2 with the file input but need to be able change
-    from push to enqueue
-
-
-    StackInterface<String> myStackDictionary = new Myles_BundeGreen_Words_Stack<>();
-            int wordCount = 0;
-            Scanner keyboard = new Scanner(System.in);
-            File inputFile = new File("dictionary.txt");
-
-            try{
-                Scanner fileData = new Scanner(inputFile);
-                while(fileData.hasNextLine()){
-                    String line = fileData.nextLine();
-                    if(myStackDictionary.push(line)){
-                        wordCount++;
-                    }
-                }
-            }
-            catch(FileNotFoundException e){
-                System.out.println("File not found");
-            }
-            boolean check = true;
-            StackInterface<String> temp = new Myles_BundeGreen_Words_Stack<>();
-     */
 }
