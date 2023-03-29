@@ -16,6 +16,7 @@ public class Myles_BundeGreen_StackSpellChecker{
                         wordCount++;
                     }
                 }
+                fileData.close();
             }
             catch(FileNotFoundException e){
                 System.out.println("File not found");
@@ -36,6 +37,9 @@ public class Myles_BundeGreen_StackSpellChecker{
                     else{
                         System.out.println("You have spelled " + word + " incorrectly or it isn't in the list");
                     }
+                    while(!temp.isEmpty()){
+                        myStackDictionary.push(temp.pop());
+                    }
                 
                 System.out.println("Continue? (1 for Yes, 0 for No)");
                 int another = keyboard.nextInt();
@@ -47,9 +51,7 @@ public class Myles_BundeGreen_StackSpellChecker{
             catch(EmptyStackException e){
                 continue;
             }
-            while(!temp.isEmpty()){
-                myStackDictionary.push(temp.pop());
-            }
+            
             System.out.println(myStackDictionary.peek());
             }
             System.out.println("Thank You!");
