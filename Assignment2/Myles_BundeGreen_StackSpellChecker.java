@@ -29,7 +29,7 @@ public class Myles_BundeGreen_StackSpellChecker{
                     while(!word.equals(myStackDictionary.peek())){
                     
                     temp.push(myStackDictionary.pop());
-                }
+                    }
                     if(word.equals(myStackDictionary.peek())){
                         System.out.println("You have spelled " + myStackDictionary.peek() + " correctly, good job.");
                     }
