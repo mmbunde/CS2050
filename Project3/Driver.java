@@ -25,7 +25,7 @@ public class Driver
 		m.addProfile(jane);
 		m.addProfile(billy);
 		m.addProfile(smith);
-		//m.display();
+		m.display();
 		System.out.println(john.getStatus());
 		System.out.println("-------------------------------------\n");
 		System.out.println("Creating friendships.\n");
@@ -36,7 +36,7 @@ public class Driver
 		m.createFriendship(smith, jane);
 		m.createFriendship(billy, smith);
 
-		//m.display();
+		m.display();
 
 		System.out.println("-------------------------------------\n");
 		System.out.println("Changing statuses / names.\n");
@@ -45,20 +45,20 @@ public class Driver
 		jane.setStatus("Now Mrs. Smith!");
 		jane.setName("Jane", "Smith");
 
-		//m.display();
+		m.display();
 
 		System.out.println("-------------------------------------\n");
 		System.out.println("Ending a friendship.\n");
 		
 		m.endFriendship(john, billy);
 		
-		//m.display();
+		m.display();
 
 		System.out.println("-------------------------------------\n");
 		System.out.println("Removing John.\n");
 		m.removeProfile(john);
 
-		//m.display();
+		m.display();
 	} // end main
 } // end Driver
 

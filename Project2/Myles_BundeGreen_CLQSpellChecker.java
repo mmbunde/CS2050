@@ -31,16 +31,14 @@ public class Myles_BundeGreen_CLQSpellChecker {
     boolean check = true;
 
     while(check){
+        int count = 1;
         System.out.println("Please enter a word to check the spelling: ");
         String word = keyboard.nextLine();
         try{
-            if(word.equals(testQueue.getFront())){
-                System.out.println("You have spelled " + testQueue.getFront() + " correctly, good job.");
-            while(!word.equals(testQueue.getFront())){
-                temp.enqueue(testQueue.dequeue());
+            while(!testQueue.isEmpty() && !word.equals(testQueue.getFront())){
+                    temp.enqueue(testQueue.dequeue());
             }
-            }
-            if(word.equals(testQueue.getFront())){
+            if(!testQueue.isEmpty() && word.equals(testQueue.getFront())){
                 System.out.println("You have spelled " + testQueue.getFront() + " correctly, good job.");
             }
             else{

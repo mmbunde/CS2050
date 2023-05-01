@@ -4,9 +4,7 @@ public class Myles_BundeGreen_UserProfile {
     private BufferedImage profilePicture;
     private UserName profileName;
     private String status;
-    private AList<Myles_BundeGreen_UserProfile> friend;
-    
-    Myles_BundeGreen_UserProfile friends = new Myles_BundeGreen_UserProfile();
+    private AList<Myles_BundeGreen_UserProfile> friends = new AList<>();
 
     public Myles_BundeGreen_UserProfile(){
         profilePicture = new BufferedImage(150, 150, BufferedImage.TYPE_INT_RGB);
@@ -45,9 +43,9 @@ public class Myles_BundeGreen_UserProfile {
     }
 
     public void addFriend(Myles_BundeGreen_UserProfile p){
-        if(!friends.contains(p)){
+        //if(!friends.contains(p)){
             friends.add(p);
-        }
+        //}
     }
 
     public void removeFriend(Myles_BundeGreen_UserProfile p){
